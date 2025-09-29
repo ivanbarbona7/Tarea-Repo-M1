@@ -1,0 +1,77 @@
+/* Colores sobrios: gris, azul suave y blanco */
+:root {
+  --primario: #2e3a59;
+  --secundario: #4a90e2;
+  --claro: #f4f4f4;
+  --texto: #333;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  margin: 0;
+  background-color: var(--claro);
+  color: var(--texto);
+  line-height: 1.6;
+}
+
+header {
+  background: var(--primario);
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.2rem;
+}
+
+.contacto a {
+  color: var(--secundario);
+  text-decoration: none;
+}
+
+main {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  background: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border-radius: 8px;
+}
+
+section {
+  padding: 1.5rem;
+  border-bottom: 1px solid #ddd;
+}
+
+section:last-child {
+  border-bottom: none;
+}
+
+h2 {
+  color: var(--primario);
+  border-left: 4px solid var(--secundario);
+  padding-left: 8px;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.skills div {
+  flex: 1 1 250px;
+  background: var(--claro);
+  padding: 1rem;
+  border-radius: 6px;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: var(--primario);
+  color: white;
+  margin-top: 2rem;
+}
