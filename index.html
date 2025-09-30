@@ -5,16 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/styles.css">
+    <script src="scripts/index.js"></script>
     <title>Mi portafolio</title>
 </head>
 
 <body>
   <header>
+    <img src="imagen retrato.jpeg" alt="Foto de Samuel Ivan Barbona" class="foto-perfil">
     <h1>Samuel Ivan Barbona</h1>
     <p class="contacto">
       Goya, Corrientes, Argentina · (3777) 500032 · 
       <a href="mailto:ivanbarbona7@gmail.com">ivanbarbona7@gmail.com</a> · 
       <a href="https://www.linkedin.com/in/ivan-barbona777" target="_blank">LinkedIn</a>
+      
     </p>
   </header>
 
@@ -64,6 +67,27 @@
       <p>Técnico Universitario en Programación - UTN (Universidad Tecnológica Nacional)</p>
     </section>
   </main>
+    <section id="crear-actividad">
+  <h2>Mis Actividades Favoritas</h2>
+  <h3>Crear Actividad</h3>
+  <form id="actividad-form">
+    <label for="titulo">Título:</label>
+    <input type="text" id="titulo" required>
+
+    <label for="descripcion">Descripción:</label>
+    <textarea id="descripcion" rows="3" required></textarea>
+
+    <label for="imagen">URL de la Imagen:</label>
+    <input type="url" id="imagen" placeholder="https://ejemplo.com/imagen.jpg">
+
+    <button type="submit">Agregar Actividad</button>
+  </form>
+</section>
+
+<section id="actividades">
+  <h2>Actividades</h2>
+  <div id="contenedor-tarjetas"></div>
+</section>
 
   <footer>
     <p>&copy; 2025 Samuel Ivan Barbona</p>
