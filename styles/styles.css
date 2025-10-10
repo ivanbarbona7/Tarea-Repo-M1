@@ -1,9 +1,10 @@
 /* Colores sobrios: gris, azul suave y blanco */
 :root {
-  --primario: #2e3a59;
-  --secundario: #4a90e2;
+  --primario: #d4d122;
+  --secundario: #dfe24a;
   --claro: #f4f4f4;
   --texto: #333;
+
 }
 
 body {
@@ -14,23 +15,45 @@ body {
   line-height: 1.6;
 }
 
+
 header {
-  background: var(--primario);
+  position: relative;      /* necesario para posicionar texto encima */
+  height: 300px;           /* alto del header (ajustable) */
+  overflow: hidden;        /* por si la imagen es más grande */
+}
+
+.foto-moto {
+  width: 99.7%;
+  height: 98%;
+  object-fit: cover;       /* para que se adapte bien */
+  filter: brightness(60%); /* oscurece la imagen para que el texto resalte */
+   border-image-slice: 1;
+   /* border-radius: 2%; */
+   border: 3px solid;
+   border-image-slice: 1;
+  border-image-source: linear-gradient(45deg, #ff0000, #f0ec04);
+  box-shadow: 0 5px 20px rgba(236, 240, 4, 0.945);
+  
+}
+
+.overlay-texto {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* centra perfectamente */
   color: white;
   text-align: center;
-  padding: 2rem 1rem;
 }
 
-header h1 {
-  margin: 0;
-  font-size: 2.2rem;
-  margin-top: -70px;
+.overlay-texto h1 {
+  font-size: 3rem;
+  margin: 0 0 0.5rem;
 }
 
-.contacto a {
-  color: var(--secundario);
-  text-decoration: none;
+.overlay-texto .contacto {
+  font-size: 1.2rem;
 }
+
 
 main {
   max-width: 900px;
@@ -53,7 +76,9 @@ section:last-child {
 h2 {
   color: var(--primario);
   border-left: 4px solid var(--secundario);
-  padding-left: 8px;
+  padding-left: 20px;
+  margin-bottom: 1rem;
+  font-size: 20px;
 }
 
 .skills {
@@ -79,13 +104,20 @@ footer {
 
 
 
-.foto-perfil {
-   padding-right: 500px; 
-  width: 80px;            /* puedes ajustar el tamaño */
-  height: 80px;
-  align-content: flex-start;
+.historia-contenedor {
+  display: flex;
+  align-items: flex-start;   /* alinea arriba */
+  gap: 1.5rem;               /* espacio entre lista e imagen */
+  margin-top: 1rem;
 }
-
+.foto-primera-moto {
+  display: block;
+  margin: 2rem auto;
+  max-width: 30%;
+  height: auto;
+  border-radius: 8px;
+  
+}
 /* Formulario */
 #crear-actividad {
   background: var(--light);
@@ -100,19 +132,7 @@ footer {
   flex-direction: column;
   gap: 1rem;
 }
-button {
-  width: 900px;
-  height: 30px;
-  background-color: var(--secundario);
-  background: #3ce761;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-button:hover {
-  background-color: #28a745;
-}
+
 #crear-actividad input,
 #crear-actividad textarea {
   padding: 0.5rem;
@@ -120,12 +140,31 @@ button:hover {
   border-radius: 6px;
 }
 
-/* Tarjetas */
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+ button[type="submit"] {
+  background-color: #2ecc71;
+  color: white;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #27ae60;
+} 
+
+/* 📌 Tarjetas */
 #contenedor-tarjetas {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1rem;
-  margin-top: 1rem;
 }
 
 .tarjeta {
@@ -151,9 +190,9 @@ button:hover {
 }
 
 .tarjeta button.eliminar {
-  margin-top: 0.5rem;
+  margin: 0.5rem 1rem 1rem;
   padding: 0.5rem 1rem;
-  background: #e74c3c;   /* rojo */
+  background: #e74c3c;
   color: white;
   border: none;
   border-radius: 4px;
@@ -162,5 +201,5 @@ button:hover {
 }
 
 .tarjeta button.eliminar:hover {
-  background: #c0392b;   /* rojo más oscuro */
+  background: #c0392b;
 }
