@@ -106,6 +106,10 @@ h2 {
   font-size: 20px;
 }
 
+h3 {
+  color: rgb(133, 38, 1);
+  margin-bottom: 1rem;
+} 
 .skills {
   display: flex;
   flex-wrap: wrap;
