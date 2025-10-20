@@ -3,7 +3,7 @@
   --primario: #d4d122;
   --secundario: #dfe24a;
   --claro: #f4f4f4;
-  --texto: #333;
+  --texto: #410505;
 
 }
 
@@ -15,11 +15,35 @@ body {
   line-height: 1.6;
 }
 
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 header {
   position: relative;      /* necesario para posicionar texto encima */
   height: 300px;           /* alto del header (ajustable) */
   overflow: hidden;        /* por si la imagen es más grande */
+  font-family: 'Poppins', sans-serif;
+  font-size: 3rem;
+  font-weight: 800;
+  text-align: center;
+  color: #333;
+  text-shadow: 2px 2px 5px #800101; 
+}
+
+header h1  {
+  animation: fadeInDown 0.5s ease forwards;
+}   
+header p {
+  animation: fadeInDown 1s ease forwards;
+  font-size: 1.5rem;
 }
 
 .foto-moto {
@@ -56,12 +80,13 @@ header {
 
 
 main {
-  max-width: 900px;
-  margin: 2rem auto;
+  max-width: 1200px;
+  margin: 2rem auto ;
   padding: 0 1rem;
   background: white;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-shadow: 0 0 10px #412525;
   border-radius: 8px;
+  padding: 0 2rem 0.5rem 2rem;
 }
 
 section {
@@ -99,11 +124,16 @@ footer {
   padding: 1rem;
   background: var(--primario);
   color: white;
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
-
-
+footer p {
+  margin: 0.2rem 0;
+}
+footer a {
+  color: rgb(89, 110, 11);
+  text-decoration: underline;
+}
 .historia-contenedor {
   display: flex;
   align-items: flex-start;   /* alinea arriba */
@@ -112,7 +142,7 @@ footer {
 }
 .foto-primera-moto {
   display: block;
-  margin: 2rem auto;
+  margin: 1rem auto;
   max-width: 30%;
   height: auto;
   border-radius: 8px;
